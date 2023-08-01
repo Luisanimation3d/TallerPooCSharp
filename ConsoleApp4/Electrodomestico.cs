@@ -42,13 +42,15 @@ namespace ConsoleApp4
 
         public Electrodomestico(double precioBase, double peso, string color, char consumoEnergetico) : this(precioBase, peso)
         {
-            comprobarConsumoEnergetico(Char.ToUpper(consumoEnergetico));
+            comprobarConsumoEnergetico(consumoEnergetico);
             comprobarColor(color.ToLower());
         }
 
         private void comprobarConsumoEnergetico(char letra)
         {
-            if (Enum.IsDefined(typeof(_consumoEnergeticoValidate), letra))
+
+            Console.WriteLine("Ingresa aqui consumo");
+            if (Enum.IsDefined(typeof(_consumoEnergeticoValidate), (int)letra))
             {
                 _consumoEnergetico = letra; 
             }
@@ -60,7 +62,9 @@ namespace ConsoleApp4
 
         private void comprobarColor(String color)
         {
-            if(Enum.IsDefined(typeof(_colorValidate), _color))
+            Console.WriteLine("Ingresa aqui color");
+
+            if (Enum.IsDefined(typeof(_colorValidate), _color))
             {
                 _color = color;
             }

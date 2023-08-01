@@ -20,7 +20,7 @@ namespace ConsoleApp4
 
         public void precioFinal()
         {
-            this.precioFinal();
+            base.precioFinal();
             if(_carga > 30)
             {
                 this._precioBase += 50;
